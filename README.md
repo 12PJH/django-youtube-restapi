@@ -43,3 +43,37 @@
     - 성능 : 자동 인덱싱, 병렬 쿼리 처리, 캐시 최적화 등으로 대용량 데이터 처리 시에도 일관된 성능을 제공한하며,
             고급 SQL 기능과 JSON, 배열, 사용자 정의 타입 등 다양한 데이터 구조를 지원해, 여러 용도를 하나의 시스템에서 처리할 수 있습니다.
 ---
+## **1) Project Settings**
+#### **Model 구조**
+    - 1) User => users
+    - email
+    - password
+    - nickname
+    - is_business
+
+    - 2) Video => videos
+    - title
+    - description
+    - link
+    - views_count
+    - video_file
+    
+    - 3) Reaction => reactions
+    - User : FK
+    - Video : FK
+    - reaction (like, dislike, cancel)
+
+    - 4) Comment => comments
+    - User : FK
+    - Video : FK    
+    - content
+    - like
+    - dislike
+
+    - 5) Subscription => subscriptions
+    - User : FK => subscriber
+    - User : FK => subscribed_user
+
+    - 6) Common => common
+    - created_at
+    - updated_at
