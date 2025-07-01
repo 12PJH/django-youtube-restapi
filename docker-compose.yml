@@ -1,5 +1,5 @@
 services:
-  app: # Django
+  app:
     build:
       context: .
       args:
@@ -9,22 +9,22 @@ services:
     volumes:
       - ./app:/app
     command: >
-      sh -c  "python manage.py wait_for_db &&
-              python manage.py migrate &&
-              python manage.py runserver 0.0.0.0:8000"
+      sh -c "python manage.py wait_for_db &&
+             python manage.py migrate &&
+             python manage.py runserver 0.0.0.0:8000"
     environment:
       - DB_HOST=db
       - DB_NAME=youtube
       - DB_USER=junhyuk1208
-      - DB_PASSWORD=password123
+      - DB_PASS=park1256!
     depends_on:
       - db
 
-  db: # PostgreSQL Database
-    image: postgres:16-alpine
+  db:
+    image: postgres:16
     volumes:
       - ./data/db:/var/lib/postgresql/data
     environment:
       - POSTGRES_DB=youtube
       - POSTGRES_USER=junhyuk1208
-      - POSTGRES_PASSWORD=password123
+      - POSTGRES_PASSWORD=park1256!
