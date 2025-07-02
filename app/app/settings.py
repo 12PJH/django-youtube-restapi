@@ -40,14 +40,24 @@ DJANGO_SYSTEM_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'core',
+    'common',
 ]
 
 CUSTOM_USER_APPS = [
     'users.apps.UsersConfig',
-
+    'comments.apps.CommentsConfig',
+    'reactions.apps.ReactionsConfig',
+    'subscriptions.apps.SubscriptionsConfig',
+    'videos.apps.VideosConfig',
+    'rest_framework', # DRF
+    'drf_spectacular', # DRF-Spectacular
 ]
 
 INSTALLED_APPS = DJANGO_SYSTEM_APPS + CUSTOM_USER_APPS
+
+REST_FRAMEWORK = {
+    'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
+}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
