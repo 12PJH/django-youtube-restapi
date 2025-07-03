@@ -9,7 +9,7 @@ from common.models import CommonModel
 
 class Comment(CommonModel):
     user = models.ForeignKey('users.User', on_delete=models.CASCADE)  # Circular import Error 방지
-    video = models.ForeignKey('videos.Video', on_delete=models.CASCADE)  # Circular import Error 방지
+    video = models.ForeignKey('videos.Video', on_delete=models.CASCADE, related_name='comments')  # Circular import Error 방지
 
     content = models.TextField()
     like = models.PositiveIntegerField(default=0)
