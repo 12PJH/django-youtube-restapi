@@ -98,3 +98,7 @@ class VideoAPITestCase(APITestCase):
 
     # 테스트 코드 실행
     # docker-compose run --rm app sh -c 'python manage.py test videos'
+    def test_video_list_post(self):
+        res = self.client.post('/api/v1/video', self.video_data)
+        print(res.data)  # 에러 메시지 출력용
+        self.assertEqual(res.status_code, status.HTTP_201_CREATED)
