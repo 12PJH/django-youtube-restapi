@@ -2,7 +2,6 @@ from django.db import models
 from common.models import CommonModel
 from users.models import User
 
-#
 # - title
 # - description
 # - link

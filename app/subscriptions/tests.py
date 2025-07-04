@@ -24,7 +24,7 @@ class SubscriptionTestCase(TestCase):
         self.assertEqual(response.status_code, status.HTTP_201_CREATED)
         self.assertTrue(Subscription.objects.filter(subscriber=self.user1, subscribed_to=self.user2).exists())
 
-    # 구독 취소 확인
+    # 구독 삭제 확인
     def test_delete_subscription(self):
         subscription = Subscription.objects.create(subscriber=self.user1, subscribed_to=self.user2)
         response = self.client.delete(f'/subscriptions/{self.user2.id}/')
