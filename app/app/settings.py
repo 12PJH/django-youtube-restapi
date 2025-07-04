@@ -104,14 +104,14 @@ USE_I18N = True
 
 USE_TZ = True
 
-STATIC_URL = 'static/'
+
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 AUTH_USER_MODEL = 'users.User'
 
-STATIC_URL = '/static/'
+STATIC_URL = '/static/static/'
 MEDIA_URL = '/static/media/'
 
-MEDIA_ROOT = '/vol/web/media'
-STATIC_ROOT = '/vol/web/static'
+MEDIA_ROOT='/vol/web/media'
+STATIC_ROOT='/vol/web/static'
