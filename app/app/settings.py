@@ -4,8 +4,9 @@ from pathlib import Path
 
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
 
-SECRET_KEY = os.environ.get("DJANGO_SECRET_KEY")
-DEBUG = bool(int(os.environ.get('DEBUG', 0))) # 0: False
+SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY')
+print(SECRET_KEY, '?????????????????????????????????????')
+DEBUG = bool(int(os.environ.get('DEBUG', 1))) # 0: False
 ALLOWED_HOSTS = ['*']
 
 
